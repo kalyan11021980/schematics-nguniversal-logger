@@ -3,7 +3,7 @@
   "schematics": {
     "ng-add": {
       "description": "Add nguniversal logging utility",
-      "factory": "./ng-add"
+      "factory": "./ng-add/index#ngAdd"
     }
   }
 }

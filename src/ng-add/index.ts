@@ -1,12 +1,17 @@
-import { Rule, SchematicContext, Tree, chain, noop } from '@angular-devkit/schematics';
+import { Rule, SchematicContext, Tree, chain, noop, mergeWith, apply, url, template } from '@angular-devkit/schematics';
 import {NodePackageInstallTask} from '@angular-devkit/schematics/tasks';
 
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
-export default function(options: any): Rule {
+export function ngAdd(options: any): Rule {
   return chain([
-    options && options.skipPackageJson ? noop() : addPackageJsonDependency()
+    options && options.skipPackageJson ? noop() : addPackageJsonDependency(), mergeWith(apply(url('./files'), [
+      template({
+        INDEX: options.index,
+        name: options.name,
+      }),
+    ]))
   ])
 }
 
