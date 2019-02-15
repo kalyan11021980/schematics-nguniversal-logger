@@ -1,6 +1,6 @@
 {
-  "name": "@blackbox/ssr-logger",
-  "version": "1.0.3",
+  "name": "@blackboxtech/logger",
+  "version": "1.0.5",
   "description": "A schematics to install nguniversal logger",
   "scripts": {
     "build": "tsc -p tsconfig.json",
